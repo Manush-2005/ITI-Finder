@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colleges</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Collegedisplay.css">
+</head>
+
+<body>
+
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+
+
+    <h1>List of Institutes</h1>
+
+    <div id="filter">
+        <label for="sort">Sort by:</label>
+        <select id="city">
+            <option value="all">Sort by City:</option>
+            <option value="Surat">Surat</option>
+            <option value="Ahemdabad">Ahemdabad</option>
+            <option value="Vadodara">Vadodara</option>
+        </select>
+
+
+    </div>
+
+
+    <div id="card-container" style="display: flex; justify-content: space-evenly;"></div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="Collegedisplay.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

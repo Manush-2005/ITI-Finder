@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <title>Signup Page</title>
+    <style>
+        body {
+            background-image: url("../Frontend/public/background\ image2.jpg");
+
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .signup-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .signup-box input[type="text"],
+        .signup-box input[type="tel no"],
+        .signup-box input[type="number"],
+        .signup-box input[type="password"],
+        .signup-box select[id="dropdown1"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        .signup-box button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .backtologin {
+            /* background-color: blue; */
+            /* color: white; */
+            padding-top: 5px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <img class="logo" src="../Frontend/public/logo.png">
+        <h1 class="title">Department of Technical Education</h1>
+        <h2 class="subtitle">Government of Gujarat</h2>
+        <div class="signup-box">
+            <input type="text" placeholder="Name" id="name">
+            <input type="tel no" placeholder="Phone No." id="phoneno">
+            <input type="text" placeholder="City" id="city">
+            <!-- <input type="text" placeholder="Board" id="board "> -->
+            <select id="board" name="dropdown">
+                <option value="">Enter your board</option>
+                <option value="option1">GSEB </option>
+                <option value="option2">CBSE</option>
+                <option value="option3">ICSE</option>
+            </select>
+            <input type="number" placeholder="Percentage" id="percentage">
+            <input type="password" placeholder="set password" id="password" maxlength="8">
+
+
+            <button type="button" onclick="signup()">Sumbit</button>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <!-- <script type="text/javascript">
+
+                async function signup() {
+
+                    var name = document.getElementById("name").value;
+                    var phoneno = document.getElementById("phoneno").value;
+                    var city = document.getElementById("city").value;
+                    var percentage = document.getElementById("percentage").value;
+                    var password = document.getElementById("password").value;
+
+                    fetch("http://localhost:3000/signup", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(
+                            {
+
+                                name: name,
+                                phoneno: phoneno,
+                                city: city,
+                                percentage: percentage,
+                                password: password
+
+                            },
+                        ),
+                    }).then(res => res.json()).then(data => {
+                        if (data.message == "User created") {
+                            alert("Signup Successful");
+
+                        }
+                        else {
+                            alert("Signup Failed")
+                        }
+
+                    });
+
+
+
+                    // axios.post("http://localhost:3000/signup", {
+                    //     name: name,
+                    //     phoneno: phoneno,
+                    //     city: city,
+                    //     percentage: percentage,
+                    //     password: password
+                    // }).then((res) => {
+                    //     alert("Signup Successful");
+                    //     window.location.href = "http://localhost:5500/loginpage.html";
+
+                    // });
+
+
+                };
+
+
+            </script> -->
+
+            <script>
+                async function signup() {
+
+                    const name = document.getElementById("name").value;
+                    const phoneno = document.getElementById("phoneno").value;
+                    const city = document.getElementById("city").value;
+                    const percentage = document.getElementById("percentage").value;
+                    const password = document.getElementById("password").value;
+                    const board = document.getElementById("board").value;
+
+                    const data = {
+                        name: name,
+                        phoneno: phoneno,
+                        city: city,
+                        percentage: percentage,
+                        password: password,
+                        board: board
+                    };
+
+                    const res = await axios.post("http://localhost:3000/signup", data);
+                    console.log(res.data);
+                    if (res.data.message == "User created") {
+                        alert("Signup Successful");
+                        window.location.href = "http://localhost:5500/Frontend/loginpage.html    ";
+                    }
+                    else {
+                        alert("Signup Failed")
+                    }
+
+
+                };
+
+
+
+            </script>
+
+            <div class="backtologin">
+                Already have an account? <a href="loginpage.html">Login Here</a>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

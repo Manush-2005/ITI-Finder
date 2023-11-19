@@ -1,0 +1,42 @@
+h1 {
+  color: white;
+  /* background-color:  rgb(28, 199, 191); */
+  background-color: black;
+
+  text-align: center;
+  font-weight: 200;
+  font-size: 40px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-family: arial, sans-serif;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  font-size: 25px;
+  font-family: arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  height: 50px;
+  text-align: center;
+  /* background-color: rgb(111, 105, 105); */
+  background-color: rgb(148, 142, 142);
+  color: white;
+}
+
+td {
+  height: 30px;
+  text-align: left;
+}
+#comp {
+  /* padding-left: 20%; */
+  justify-content: center;
+}

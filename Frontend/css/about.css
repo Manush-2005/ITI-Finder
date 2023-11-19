@@ -1,0 +1,56 @@
+*{
+    font-family:arial,sans-serif;
+}
+
+h1{
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color:white;
+    font-weight:200;
+    font-size:40px;
+    background-color: rgb(28, 199, 191);
+    height: 50px;
+
+}
+
+#zero
+{
+    height: 100px;
+}
+#one{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 25px;
+    text-align: justify;
+    /* text-align: start; */
+}
+
+#three{
+    /* padding-left: 20px; */
+    /* padding-right: 50px; */
+    font-size: 25px;
+    text-align: start;
+}
+
+#five{
+    /* padding-left: 20px; */
+    padding-right: 20px;
+    font-size: 25px;
+
+    text-align: justify;
+}
+
+ul{
+    font-size: 22px;
+}
+
+#img1{
+    text-align: center;
+    padding-left: 20px;
+}
+#img2{
+    /* padding-left: 20px; */
+    padding-right: 20px;
+}

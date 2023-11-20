@@ -192,13 +192,18 @@ const getiticourse = async (req, res) => {
 };
 
 const recommedITI = async (req, res) => {
-  const { reqcity, percentage, grade } = req.fields;
-  console.log(reqcity);
+  const { reqcity, percentage } = req.body;
 
   const foundITI = await ITI.find({
     city: reqcity,
     Cutoffpercentage: { $lte: percentage },
   });
+
+  if (foundITI) {
+    res.status(200).json({ message: "ITI found", foundITI });
+  } else {
+    res.status(404).json({ message: "ITI not found" });
+  }
 };
 
 module.exports = {

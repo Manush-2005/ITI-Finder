@@ -12,7 +12,7 @@
 </head>
 
 <body>
- 
+
   <br></br>
 
   <form>
@@ -20,11 +20,10 @@
     <label for="exampleDataList" class="form-label">Preferred city:</label>
     <input class="form-control" list="datalistOptions" id="city" placeholder="Type to search...">
     <datalist id="datalistOptions">
-      <option value="baroda">
+      <option value="Vadodara">
       <option value="Ahemdabad">
       <option value="Surat">
-      <option value="Rajkot">
-      <option value="Junagadh">
+
     </datalist>
     <br>
 
@@ -33,7 +32,8 @@
 
       <div id="10thpass" style="display:flex; align-items: center; gap: 10%;">
 
-        <input type="number" class="form-control" id="seatno" placeholder="enter your seat no" style="width: 30%;">
+        <input type="number" class="form-control" id="percentage" placeholder="enter your percentage"
+          style="width: 30%;">
         <!-- <label for="dropdown">Choose an board:</label> -->
         <select id="dropdown1" name="dropdown">
           <option value="">Enter your board</option>
@@ -69,6 +69,7 @@
 
       <script>
         document.querySelectorAll('input[name="category"]').forEach((elem) => {
+
           elem.addEventListener("change", function (event) {
             var select = document.getElementById("dropdown");
             var length = select.options.length;
@@ -89,6 +90,11 @@
             }
           });
         });
+
+
+
+
+
       </script>
       <!-- <datalist id="Courselist">
   <option value="CE">
@@ -98,11 +104,47 @@
   <option value="Electrical"> -->
 
     </div>
-    <button type="button" id="KnowITI">Submit</button>
-    <script type="text/javascript">
+    <button type="button" id="KnowITI" onclick="recomedITI()">Submit</button>
+    <!-- <script type="text/javascript">
       document.getElementById("KnowITI").onclick = function () {
         window.location.href = "http://localhost:5500/hackthon/RequiredITI.html";
       };
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script>
+
+      async function recomedITI() {
+
+        var reqcity = document.getElementById("city").value;
+        var percentage = document.getElementById("percentage").value;
+
+        console.log(reqcity);
+        console.log(percentage);
+
+        const res = await axios.post("http://localhost:3000/recommedITI", {
+          reqcity: reqcity,
+          percentage: percentage
+        });
+
+
+        const reqITI = res.data.foundITI[0];
+        console.log(reqITI);
+
+        if (reqITI == undefined) {
+          alert("No ITI found")
+          return;
+        }
+
+        window.location.href = `http://localhost:5500/Frontend/Collegedetail.html?id=${reqITI._id}`
+
+
+
+
+
+      };
+
     </script>
 
   </form>

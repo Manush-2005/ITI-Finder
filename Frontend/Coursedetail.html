@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        .preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #fff;
+        }
+
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            margin: -35px 0 0 -35px;
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1 id="courseName"></h1>
+            </div>
+            <img id="courseImage" class="card-img-top" src="" alt="Course Image">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Description</h2>
+                        <p id="courseDescription"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Syllabus</h2>
+                        <p id="courseSyllabus"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Minimum Qualification Eligibility</h2>
+                        <p id="courseQualification"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Duration</h2>
+                        <p id="courseDuration"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Type</h2>
+                        <p id="courseType"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Opportunities</h2>
+                        <p id="courseOpportunities"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Fees</h2>
+                        <p id="courseFees"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>ITI Offering This Course</h2>
+                        <p id="courseITI"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Salary Expectation</h2>
+                        <p id="courseSalary"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="coursedetail.js"></script>
+</body>
+
+</html>

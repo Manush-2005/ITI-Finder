@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Frontend/css/style.css">
+
+</head>
+
+<body>
+
+  <br></br>
+
+  <form>
+    <h2>Find Your ITI:</h2>
+    <label for="exampleDataList" class="form-label">Preferred city:</label>
+    <input class="form-control" list="datalistOptions" id="city" placeholder="Type to search...">
+    <datalist id="datalistOptions">
+      <option value="baroda">
+      <option value="Ahemdabad">
+      <option value="Surat">
+      <option value="Rajkot">
+      <option value="Junagadh">
+    </datalist>
+    <br>
+
+    <div class="mb-3">
+      <label for="Percentage" class="form-label">If you are 10th passed:</label>
+
+      <div id="10thpass" style="display:flex; align-items: center; gap: 10%;">
+
+        <input type="number" class="form-control" id="seatno" placeholder="enter your seat no" style="width: 30%;">
+        <!-- <label for="dropdown">Choose an board:</label> -->
+        <select id="dropdown1" name="dropdown">
+          <option value="">Enter your board</option>
+          <option value="option1">GSEB </option>
+          <option value="option2">CBSE</option>
+          <option value="option3">ICSE</option>
+        </select>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="mb-4">
+      <label for="question3" class="form-label">Field Of Interest:</label>
+      <!-- <input class="form-control" list="Courselist" id="knowfor" placeholder="Type to search..."> -->
+      <!-- <select id="dropdown" name="dropdown">
+            <option value="">Enter your field of fucking interest</option>
+            <option value="option1">engineering</option>
+            <option value="option2">Non engineering</option>
+            <!-- <option value="option3">ICSE</option> -->
+      <!-- </select> --> -->
+
+      <div id="career">
+        <input type="radio" id="engineering" name="category" value="engineering">
+        <label for="engineering">Engineering</label><br>
+        <input type="radio" id="non-engineering" name="category" value="non-engineering">
+        <label for="non-engineering">Non-Engineering</label><br>
+
+        <select id="dropdown"></select>
+      </div>
+
+      <script>
+        document.querySelectorAll('input[name="category"]').forEach((elem) => {
+          elem.addEventListener("change", function (event) {
+            var select = document.getElementById("dropdown");
+            var length = select.options.length;
+            for (i = length - 1; i >= 0; i--) {
+              select.options[i] = null;
+            }
+            if (this.value == 'engineering') {
+              var options = ["Fitter", "Welder", "IOT", "Electrian", "Diesel-Mechanic", "Auto-Mechanic", "Carpenter"];
+            } else {
+              var options = ["Foot wear", "Dress making", "Hair and skin care", "Commercial art", "Leather goods maker", "Hand compositor", "Letter press Machine Mender",];
+            }
+            for (var i = 0; i < options.length; i++) {
+              var opt = options[i];
+              var el = document.createElement("option");
+              el.textContent = opt;
+              el.value = opt;
+              select.appendChild(el);
+            }
+          });
+        });
+      </script>
+      <!-- <datalist id="Courselist">
+  <option value="CE">
+  <option value="Mech">
+  <option value="EC">
+  <option value="Civil">
+  <option value="Electrical"> -->
+
+    </div>
+    <button type="button" id="KnowITI">Submit</button>
+    <script type="text/javascript">
+      document.getElementById("KnowITI").onclick = function () {
+        window.location.href = "http://localhost:5500/hackthon/RequiredITI.html";
+      };
+    </script>
+
+  </form>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!-- InstituteDetail.html -->
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Institute Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1,
+        h3,
+        p,
+        #image {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+        <h1 id="name"></h1>
+        <img id="image" src="" alt="Institute Image">
+        <h3>Address</h3>
+        <p id="address"></p>
+        <h3>City</h3>
+        <p id="city"></p>
+        <h3>Phone</h3>
+        <p id="phone"></p>
+        <h3>Code</h3>
+        <p id="code"></p>
+        <h3>Application Info</h3>
+        <p id="applicationInfo"></p>
+        <h3>Counseling Process</h3>
+        <p id="counselingProcess"></p>
+        <h3>Board</h3>
+        <p id="board"></p>
+        <h3>Placement Companies</h3>
+        <p id="placementCompanies"></p>
+        <h3>Establishment Date</h3>
+        <p id="establishmentDate"></p>
+        <h2>Faculty</h2>
+        <ul id="facultyList"></ul>
+        <h2>Courses</h2>
+        <ul id="courses"></ul>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Collegedetail.js"></script>
+
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>College Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .title {
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .college-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .detail-section {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .detail-section:hover {
+            transform: scale(1.05);
+        }
+
+
+        .preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #fff;
+        }
+
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            margin: -35px 0 0 -35px;
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div class="container">
+        <h1 id="collegeName" class="title"></h1>
+        <img id="collegeImage" class="college-image" src="" alt="College Image">
+        <div class="details">
+            <div class="detail-section">
+                <h3>Address</h3>
+                <div id="address"></div>
+            </div>
+            <div class="detail-section">
+                <h3>City</h3>
+                <div id="city"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Phoenno</h3>
+                <div id="phone"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Code</h3>
+                <div id="code"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Application Info</h3>
+                <div id="applicationInfo"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Counseling Process</h3>
+                <div id="counselingProcess"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Board</h3>
+                <div id="board"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Placement Companies</h3>
+                <div id="placementCompanies"></div>
+            </div>
+
+            <div class="detail-section">
+                <h3>Establishment Date</h3>
+                <div id="establishmentDate"></div>
+            </div>
+
+
+        </div>
+        <h2>Faculty</h2>
+        <ul id="facultyList"></ul>
+        <h2>Courses</h2>
+        <ul id="courses"></ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Collegedetail.js"></script>
+</body>
+
+</html>

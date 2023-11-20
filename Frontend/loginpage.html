@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/esm/axios.min.js"></script>
+    <script src="script.js"></script>
+
+
+    <style>
+        body {
+            background-image: url("../Frontend/public/background\ image1.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .login-box input[type="number"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        .login-box button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .back-to-home {
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .backtosignup {
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="logo" src="../Frontend/public/logo.png">
+        <h1 class="title">Department of Technical Education</h1>
+        <h2 class="subtitle">Government Of Gujarat </h2>
+
+        <div class="login-box">
+
+            <input type="number" placeholder="phoneno" id="phoneno" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button type="button" onclick="login()"> LOGIN </button>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+
+            <script>
+
+                async function login() {
+
+                    const phoneno = document.getElementById("phoneno").value;
+                    const password = document.getElementById("password").value;
+
+                    const res = await axios.post("http://localhost:3000/login", {
+                        phoneno: phoneno,
+                        password: password
+                    });
+                    console.log(res.data);
+
+                    if (res.data.message === "User logged in") {
+                        alert("User logged in");
+                        window.location.href = "http://localhost:5500/Frontend/homepage.html";
+                    } else {
+                        alert("Invalid Credentials");
+                    }
+                };
+
+
+            </script>
+
+            <div class="backtosignup">
+
+                Don't have an account ? <a href="../Frontend/signuppage.html">Click here</a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

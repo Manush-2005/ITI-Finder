@@ -54,7 +54,7 @@ app.get("/getITIcourse", GETITIcourses);
 
 app.get("/getITIcourse/:id", getiticourse);
 
-app.post("/recommedITI", formidable(), recommedITI);
+app.post("/recommedITI", recommedITI);
 
 app.listen(port, () => {
   mongoose

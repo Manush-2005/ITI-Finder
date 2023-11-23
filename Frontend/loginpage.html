@@ -3,10 +3,6 @@
 
 <head>
     <title>Login Page</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/esm/axios.min.js"></script>
-    <script src="script.js"></script>
-
-
     <style>
         body {
             background-image: url("../Frontend/public/background\ image1.jpg");
@@ -84,12 +80,6 @@
             left: 20px;
             cursor: pointer;
         }
-
-        .backtosignup {
-            font-size: 16px;
-            margin-top: 10px;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -97,18 +87,17 @@
     <div class="container">
         <img class="logo" src="../Frontend/public/logo.png">
         <h1 class="title">Department of Technical Education</h1>
-        <h2 class="subtitle">Government Of Gujarat </h2>
+        <h2 class="subtitle">Government Of Gujrat </h2>
 
         <div class="login-box">
 
+
+
             <input type="number" placeholder="phoneno" id="phoneno" required>
             <input type="password" placeholder="Password" id="password" required>
-            <button type="button" onclick="login()"> LOGIN </button>
+            <button type="submit" onclick="login()"> LOGIN </button>
+
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-
-
-
             <script>
 
                 async function login() {
@@ -131,15 +120,15 @@
                 };
 
 
+
+
+
             </script>
-
-            <div class="backtosignup">
-
-                Don't have an account ? <a href="../Frontend/signuppage.html">Click here</a>
-            </div>
         </div>
 
-
+        <div class="backtosignup">
+            Don't have an account ? <a href="signuppage.html">Click here</a>
+        </div>
 
 
     </div>

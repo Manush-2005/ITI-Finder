@@ -8,7 +8,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script> -->
     <title>Signup Page</title>
     <style>
         body {
@@ -61,7 +61,8 @@
         .signup-box input[type="tel no"],
         .signup-box input[type="number"],
         .signup-box input[type="password"],
-        .signup-box select[id="dropdown1"] {
+        .signup-box select[id="dropdown1"],
+        .signup-box select[id="board"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -104,7 +105,7 @@
             <input type="text" placeholder="Name" id="name">
             <input type="tel no" placeholder="Phone No." id="phoneno">
             <input type="text" placeholder="City" id="city">
-            <!-- <input type="text" placeholder="Board" id="board "> -->
+            <input type="text" placeholder="Board" id="board ">
             <select id="board" name="dropdown">
                 <option value="">Enter your board</option>
                 <option value="option1">GSEB </option>
@@ -172,7 +173,7 @@
                 };
 
 
-            </script> -->
+            </script>  -->
 
             <script>
                 async function signup() {
@@ -200,7 +201,7 @@
                         window.location.href = "http://localhost:5500/Frontend/loginpage.html    ";
                     }
                     else {
-                        alert("Signup Failed")
+                        alert("Signup Failed");
                     }
 
 

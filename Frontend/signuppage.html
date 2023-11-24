@@ -105,7 +105,7 @@
             <input type="text" placeholder="Name" id="name">
             <input type="tel no" placeholder="Phone No." id="phoneno">
             <input type="text" placeholder="City" id="city">
-            <input type="text" placeholder="Board" id="board ">
+
             <select id="board" name="dropdown">
                 <option value="">Enter your board</option>
                 <option value="option1">GSEB </option>
@@ -196,14 +196,22 @@
 
                     const res = await axios.post("http://localhost:3000/signup", data);
                     console.log(res.data);
-                    if (res.data.message == "User created") {
-                        alert("Signup Successful");
-                        window.location.href = "http://localhost:5500/Frontend/loginpage.html    ";
-                    }
-                    else {
-                        alert("Signup Failed");
-                    }
+                    try {
 
+                        if (res.data.message == "User created") {
+                            alert("Signup Successful");
+                            window.location.href = "http://localhost:5500/Frontend/loginpage.html    ";
+                        }
+                        else {
+                            alert("Signup Failed");
+                        }
+
+
+                    } catch (error) {
+
+                        alert("Signup Failed");
+
+                    }
 
                 };
 

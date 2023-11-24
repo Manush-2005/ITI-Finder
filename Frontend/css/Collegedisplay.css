@@ -5,6 +5,14 @@ body {
   background-color: #f4f4f4;
 }
 
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 h1 {
   text-align: center;
   padding: 20px;
@@ -68,16 +76,19 @@ h1,
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
+  background-color: black;
+  color: #000000;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 .btn:hover {
   background-color: #444;
+  transform: translateY(2px);
 }
 
 .preloader {

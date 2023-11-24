@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .profile-name {
+            font-size: 22px;
+            color: #007bff;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .profile-info {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container profile-container">
+        <img src="user-image.jpg" alt="User Image" class="profile-image">
+        <h2 class="profile-name">User Name</h2>
+        <p class="profile-info">Board: CBSE</p>
+        <p class="profile-info">Grade: 10</p>
+        <p class="profile-info">Marks: 95%</p>
+        <p class="profile-info">City of Residence: New Delhi</p>
+        <p class="profile-info">Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+        <p class="profile-info">Field of Interest: Computer Science</p>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        var userid = localStorage.getItem("userid");
+
+        axios.get('http://localhost:3000/users/' + userid)
+            .then(function (response) {
+                console.log(response.data);
+                document.querySelector('.profile-name').innerHTML = response.data.name;
+                document.querySelector('.profile-info:nth-child(1)').innerHTML = "Board: " + response.data.board;
+                document.querySelector('.profile-info:nth-child(2)').innerHTML = "Grade: " + response.data.grade;
+                document.querySelector('.profile-info:nth-child(3)').innerHTML = "Marks: " + response.data.marks + "%";
+                document.querySelector('.profile-info:nth-child(4)').innerHTML = "City of Residence: " + response.data.city;
+                document.querySelector('.profile-info:nth-child(5)').innerHTML = "Bio: " + response.data.bio;
+                document.querySelector('.profile-info:nth-child(6)').innerHTML = "Field of Interest: " + response.data.field;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

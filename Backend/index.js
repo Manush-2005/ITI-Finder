@@ -16,6 +16,7 @@ const {
   recommedITI,
 } = require("./Controllers");
 const formidable = require("express-formidable");
+const { User } = require("./Database");
 // app.use(formidable());
 app.use(cors());
 app.use(express.json());

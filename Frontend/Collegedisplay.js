@@ -68,7 +68,7 @@ const RENDERITIPAGE = async () => {
 
     const btn = document.createElement("a");
     // btn.href = "#"; // Replace with the actual link
-    btn.className = "btn";
+    btn.className = "btn btn-primary";
     btn.textContent = "Learn More";
     btn.addEventListener("click", () => {
       const ITIid = ITI._id;

@@ -17,22 +17,23 @@
 
 
 
-    <h1>List of Institutes</h1>
+    <div class="container-fluid mt-4">
+        <h1 class="text-center mb-4">List of Institutes</h1>
 
-    <div id="filter">
-        <label for="sort">Sort by:</label>
-        <select id="city">
-            <option value="all">Sort by City:</option>
-            <option value="Surat">Surat</option>
-            <option value="Ahemdabad">Ahemdabad</option>
-            <option value="Vadodara">Vadodara</option>
-        </select>
-
-
+        <div id="filter" class="mb-4">
+            <label for="sort">Sort by:</label>
+            <select id="city" class="form-control">
+                <option value="all">Sort by City:</option>
+                <option value="Surat">Surat</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Vadodara">Vadodara</option>
+            </select>
+        </div>
+        <div id="card-container"></div>
     </div>
 
 
-    <div id="card-container" style="display: flex; justify-content: space-evenly;"></div>
+
 
 
 

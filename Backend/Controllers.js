@@ -24,10 +24,9 @@ const Signupfunction = async (req, res) => {
 const Loginfunction = async (req, res) => {
   const { phoneno, password } = req.body;
   const isuser = await User.findOne({ phoneno: phoneno, password: password });
-  const redirecturl = "/homepage.html";
 
   if (isuser) {
-    res.status(200).json({ message: "User logged in", redirecturl });
+    res.status(200).json({ message: "User logged in", isuser });
   } else {
     res.status(400).json({ message: "I AM THE ONE" });
   }

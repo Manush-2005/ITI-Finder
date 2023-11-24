@@ -109,11 +109,13 @@
                         phoneno: phoneno,
                         password: password
                     });
-                    console.log(res.data);
+                    console.log(res.data.isuser._id);
 
                     if (res.data.message === "User logged in") {
                         alert("User logged in");
+
                         window.location.href = "http://localhost:5500/Frontend/homepage.html";
+                        localStorage.setItem("userid", res.data.isuser._id);
                     } else {
                         alert("Invalid Credentials");
                     }

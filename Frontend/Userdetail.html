@@ -26,11 +26,12 @@
         }
 
         .profile-image {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
             border-radius: 50%;
-            margin: 0 auto;
+            display: block;
+            margin: auto;
         }
 
         .profile-name {
@@ -50,12 +51,14 @@
 
 <body>
     <div class="container profile-container">
-        <img src="user-image.jpg" alt="User Image" class="profile-image">
-        <h2 class="profile-name">User Name</h2>
-        <p class="profile-info">Board: CBSE</p>
+        <input type="file" id="image-upload" accept="image/*">
+        <img src="user-image.jpg" alt="User Image" class="profile-image" id="profile-image">
+        <h2 class="profile-name" id="name"></h2>
+        <p class="profile-board">Board:CBSE</p>
         <p class="profile-info">Grade: 10</p>
-        <p class="profile-info">Marks: 95%</p>
-        <p class="profile-info">City of Residence: New Delhi</p>
+        <p class="profile-percentage"></p>
+        <p class="profile-city"></p>
+        <p class="profile-phone"></p>
         <p class="profile-info">Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
         <p class="profile-info">Field of Interest: Computer Science</p>
     </div>
@@ -65,20 +68,53 @@
 
         var userid = localStorage.getItem("userid");
 
-        axios.get('http://localhost:3000/users/' + userid)
-            .then(function (response) {
-                console.log(response.data);
-                document.querySelector('.profile-name').innerHTML = response.data.name;
-                document.querySelector('.profile-info:nth-child(1)').innerHTML = "Board: " + response.data.board;
-                document.querySelector('.profile-info:nth-child(2)').innerHTML = "Grade: " + response.data.grade;
-                document.querySelector('.profile-info:nth-child(3)').innerHTML = "Marks: " + response.data.marks + "%";
-                document.querySelector('.profile-info:nth-child(4)').innerHTML = "City of Residence: " + response.data.city;
-                document.querySelector('.profile-info:nth-child(5)').innerHTML = "Bio: " + response.data.bio;
-                document.querySelector('.profile-info:nth-child(6)').innerHTML = "Field of Interest: " + response.data.field;
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        // axios.get('http://localhost:3000/users/' + userid)
+        //     .then(function (response) {
+        //         console.log(response.data);
+        //         document.querySelector('.profile-name').innerHTML = response.data.name;
+        //         document.querySelector('.profile-info:nth-child(1)').innerHTML = "Board: " + response.data.board;
+        //         document.querySelector('.profile-info:nth-child(2)').innerHTML = "Grade: " + response.data.grade;
+        //         document.querySelector('.profile-info:nth-child(3)').innerHTML = "Marks: " + response.data.marks + "%";
+        //         document.querySelector('.profile-info:nth-child(4)').innerHTML = "City of Residence: " + response.data.city;
+        //         document.querySelector('.profile-info:nth-child(5)').innerHTML = "Bio: " + response.data.bio;
+        //         document.querySelector('.profile-info:nth-child(6)').innerHTML = "Field of Interest: " + response.data.field;
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     });
+
+        document.getElementById('image-upload').addEventListener('change', function (e) {
+
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                document.getElementById('profile-image').src = event.target.result;
+            };
+            reader.readAsDataURL(e.target.files[0]);
+
+            e.target.style.display = 'none';
+
+
+        });
+
+        async function getusers() {
+            const res = await axios.get('http://localhost:3000/getuserdetail/' + userid);
+            const user = res.data.user;
+            console.log(user);
+
+            document.querySelector('.profile-name').innerHTML = user.name;
+            document.querySelector('.profile-percentage').innerHTML = "Percentage of Passing: " + user.percentage + "%";
+
+            document.querySelector('.profile-city').innerHTML = "City of Residence: " + user.city;
+
+
+            document.querySelector('.profile-phone').innerHTML = "Phone Number: " + user.phoneno;
+            ;
+
+
+
+
+        }
+        getusers();
 
 
     </script>

@@ -40,6 +40,16 @@ app.get("/getrequiredITI:id", (req, res) => {
   }
 });
 
+app.get("/getuserdetail/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  const user = await User.findOne({ _id: id });
+
+  if (user) {
+    res.status(200).send({ message: "User found", user });
+  }
+});
+
 // Route to add ITI
 app.post("/addITI", formidable(), AddITI);
 

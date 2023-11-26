@@ -9,11 +9,57 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f3f3f3; */
+            background-color: white;
+            color: black;
+            font-family: "Roboto", sans-serif;
+        }
+
+        header {
+            /* background-color: #009688; */
+            background-color: black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul li a {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+            /* Adjust as needed */
+            padding: 10px;
+            /* Adjust as needed */
+        }
+
+        nav ul li a:hover {
+            background-color: #fcfaf8;
+            text-decoration: none;
+            /* Change this to the color you want for the rectangle */
+            color: black;
         }
 
         .profile-container {
@@ -36,7 +82,9 @@
 
         .profile-name {
             font-size: 22px;
-            color: #007bff;
+            /* color: #007bff; */
+            /* background-color: white; */
+            color: white;
             text-align: center;
             margin-top: 10px;
         }
@@ -50,10 +98,40 @@
 </head>
 
 <body>
+
+    <header class="bg-black text-white p-3">
+        <h1 class="text-center">User Profile</h1>
+    </header>
+
+
+
+
+    <header>
+
+        <nav style="margin-top: 18px;font-size: 20px;">
+            <ul>
+                <li><a href="../Frontend/homepage.html">Home</a></li>
+                <li><a href="../Frontend/about.html">About</a></li>
+                <li><a href="Carrerpath.html">Career Paths</a></li>
+                <li><a href="../Frontend/public/UserManualForOnlineFormFeeling.pdf" target="_blank">Admission
+                        Process</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="../Frontend/public/ITIList.pdf" target="_blank">ITI LIST </a></li>
+                <li><a href="../Frontend/Userdetail.html" target="_blank"> <i class="fas fa-user"></i> User Profile </a>
+                </li>
+
+
+
+
+            </ul>
+        </nav>
+    </header>
+    <br></br>
     <div class="container profile-container">
         <input type="file" id="image-upload" accept="image/*">
         <img src="user-image.jpg" alt="User Image" class="profile-image" id="profile-image">
         <h2 class="profile-name" id="name"></h2>
+        <hr size="1000px">
         <p class="profile-board">Board:CBSE</p>
         <p class="profile-info">Grade: 10</p>
         <p class="profile-percentage"></p>

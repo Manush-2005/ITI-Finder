@@ -8,10 +8,60 @@
 </head>
 <style>
     body {
+        margin: 0;
+        padding: 0;
+        /* background-color: #f3f3f3; */
+        background-color:white;
+        color: black;
+        font-family: "Roboto", sans-serif;
+    }
+
+    body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    header {
+        /* background-color: #009688; */
+        background-color: black;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
     header h1 {
+        font-size: 36px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    nav ul {
+        list-style-type: none;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+
+    nav ul li a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px; /* Adjust as needed */
+  padding: 10px; /* Adjust as needed */
+}
+
+nav ul li a:hover {
+  background-color: #fcfaf8; /* Change this to the color you want for the rectangle */
+  color: black;
+}
+    /* header h1 {
         color: white;
         background-color: darkslateblue;
         font-size: 37px;
@@ -19,7 +69,7 @@
         text-align: center;
         padding-top: 15px;
         padding-bottom: 20px;
-    }
+    } */
 
     img {
         display: inline-block;
@@ -31,24 +81,26 @@
 
     #scope {
         position: relative;
-        left: 12.5%;
+        left: 6%;
     }
 
     #target {
         position: relative;
-        left: 25%;
+        left: 15%;
     }
 
     .smallborder {
         width: 26%;
         height: 10px;
-        background-color: rgb(141, 131, 206);
+        /* background-color: rgb(141, 131, 206); */
+        background-color: black;
         box-shadow: inset 0 12px 12px -12px;
         border-radius: 3px;
     }
 
     #hr1 {
         margin-right: 75%;
+        width: 415px;
     }
 
     #hr2 {
@@ -103,9 +155,31 @@
 </style>
 
 <body>
-    <header>
-        <h1>About us</h1>
+    <!-- <header> -->
+    <header class="bg-black text-white p-3">
+        <h1 class="text-center">About ITI</h1>
     </header>
+    <!-- <h1>About us</h1> -->
+    <header>
+
+        <nav style="margin-top: 18px;font-size: 20px;">
+            <ul>
+                <li><a href="../Frontend/homepage.html">Home</a></li>
+                <li><a href="../Frontend/about.html">About</a></li>
+                <li><a href="Carrerpath.html">Career Paths</a></li>
+                <li><a href="../Frontend/public/UserManualForOnlineFormFeeling.pdf" target="_blank">Admission
+                        Process</a></li>
+                <li><a href="homepage.html">Contact Us</a></li>
+                <li><a href="../Frontend/public/ITIList.pdf" target="_blank">ITI LIST </a></li>
+                <li><a href="../Frontend/Userdetail.html" target="_blank"> <i class="fas fa-user"></i> User Profile
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <br><br>
+    <!-- </header> -->
     <main>
         <p>
             <span id="clg"><img src="../Frontend/public/CLG.jpg" alter="ITI" height="230"></span>

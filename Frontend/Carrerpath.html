@@ -4,9 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Career Path</title>
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* background-color: #f3f3f3; */
+            background-color: #3282b8;
+            color: black;
+            font-family: "Roboto", sans-serif;
+        }
+
+        header {
+            /* background-color: #009688; */
+            background-color: black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
         .navbar {
             font-size: 1.2em;
         }
@@ -51,6 +90,37 @@
         .hidden {
             display: none !important;
         }
+
+        nav ul li a {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+            /* Adjust as needed */
+            padding: 10px;
+            /* Adjust as needed */
+        }
+
+        nav ul li a:hover {
+            background-color: #fcfaf8;
+            /* Change this to the color you want for the rectangle */
+            color: black;
+            text-decoration: none;
+        }
+
+        card-header {
+            background-color: black;
+            color: white;
+        }
+
+        #engineeringCourses,
+        #nonEngineeringCourses {
+            list-style-type: none;
+        }
+
+        .list-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 
 
@@ -63,6 +133,36 @@
 
 <body>
 
+    <header class="bg-black text-white p-3">
+        <h1 class="text-center">Career Path</h1>
+    </header>
+
+
+
+
+    <header>
+
+        <nav style="margin-top: 18px;font-size: 20px;">
+            <ul>
+                <li><a href="../Frontend/homepage.html">Home</a></li>
+                <li><a href="../Frontend/about.html">About</a></li>
+                <li><a href="Carrerpath.html">Career Paths</a></li>
+                <li><a href="../Frontend/public/UserManualForOnlineFormFeeling.pdf" target="_blank">Admission
+                        Process</a></li>
+                <!-- <li><a href="homepage.html">Contact Us</a></li> -->
+                <li><a href="../Frontend/public/ITIList.pdf" target="_blank">ITI LIST </a></li>
+                <li><a href="../Frontend/Userdetail.html" target="_blank"> <i class="fas fa-user"></i> User Profile </a>
+                </li>
+
+
+
+
+            </ul>
+        </nav>
+    </header>
+    <br></br>
+
+
     <div id="preloader" class="preloader">
         <div class="spinner"></div>
     </div>
@@ -70,11 +170,11 @@
 
 
 
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <!-- <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand font-weight-bold" href="#">Career Paths</a>
         </div>
-    </header>
+    </header> -->
 
 
 
@@ -82,9 +182,9 @@
 
     <main class="container mt-4">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header">
+            <!-- <div class="col-lg-6">
+                <div class="card mb-4" style="border-color: black; border-radius: 10;">
+                    <div class="card-header" style="background-color: grey; color: white; padding-left: 33%;">
                         <h2>Engineering</h2>
                     </div>
                     <ul id="engineeringCourses" class="list-group list-group-flush">
@@ -93,12 +193,33 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header">
+                <div class="card mb-4" style="border-color: black; border-radius: 10;">
+                    <div class="card-header" style="background-color: grey; color: white; padding-left: 30%;">
                         <h2>Non-Engineering</h2>
                     </div>
                     <ul id="nonEngineeringCourses" class="list-group list-group-flush">
 
+                    </ul>
+                </div>
+            </div> -->
+
+            <div class="col-lg-6">
+                <div class="card mb-4 p-3" style="border-color: black; border-radius: 10;">
+                    <div class="card-header" style="background-color: grey; color: white;">
+                        <h2 class="text-center">Engineering</h2>
+                    </div>
+                    <ul id="engineeringCourses" class="list-group list-group-flush">
+                        <!-- List items -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4 p-3" style="border-color: black; border-radius: 10;">
+                    <div class="card-header" style="background-color: grey; color: white;">
+                        <h2 class="text-center">Non-Engineering</h2>
+                    </div>
+                    <ul id="nonEngineeringCourses" class="list-group list-group-flush">
+                        <!-- List items -->
                     </ul>
                 </div>
             </div>

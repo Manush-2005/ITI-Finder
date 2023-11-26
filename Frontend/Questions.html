@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* background-color: #f3f3f3; */
+            background-color: white;
+            color: black;
+            font-family: "Roboto", sans-serif;
+        }
+
+        header {
+            /* background-color: #009688; */
+            background-color: black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul li a {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+            /* Adjust as needed */
+            padding: 10px;
+            /* Adjust as needed */
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            background-color: #fcfaf8;
+            /* Change this to the color you want for the rectangle */
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-black text-white p-3">
+        <h1 class="text-center">ITI Finder Portal</h1>
+    </header>
+
+    <header>
+
+        <nav style="margin-top: 18px;font-size: 20px;">
+            <ul>
+                <li><a href="../Frontend/homepage.html">Home</a></li>
+                <li><a href="../Frontend/about.html">About</a></li>
+                <li><a href="Carrerpath.html">Career Paths</a></li>
+                <li><a href="../Frontend/public/UserManualForOnlineFormFeeling.pdf" target="_blank">Admission
+                        Process</a>
+
+
+
+                </li>
+                <li><a href="../Frontend/public/FEE STRUCTURE PDF.pdf">Info about fees</a></li>
+                <li><a href="../Frontend/public/ITIList.pdf" target="_blank">ITI LIST </a></li>
+                <li><a href="../Frontend/Userdetail.html" target="_blank"> <i class="fas fa-user"></i> User Profile </a>
+                </li>
+                <li><a href="../Frontend/public/" target="_blank">Certifications
+                    </a></li>
+
+
+
+
+
+            </ul>
+        </nav>
+    </header>
+    <br></br>
+    <div class="container mt-5">
+        <div class="form-group">
+            <label for="city">Subject of Interest</label>
+            <input class="form-control" list="Subject of intrest" id="favorite"
+                placeholder="Type your favorite subject">
+            <datalist id="Subject of intrest">
+                <option value="Computer">
+                <option value="Science">
+                <option value="Environmental science">
+            </datalist>
+        </div>
+        <div class="form-group">
+            <label for="hobbies">Hobbies</label>
+            <input class="form-control" list="Hobbies" id="hobbies" placeholder="Hobbies">
+            <datalist id="Hobbies">
+                <option value="Embroidery">
+                <option value="Craftsmanship">
+                <option value="Online Games">
+            </datalist>
+        </div>
+        <div class="form-group">
+            <label for="question">Do you enjoy working with your hands to create and fix things?</label>
+            <input class="form-control" list="practical" id="practical" placeholder="Answer">
+            <datalist id="practical">
+                <option value="Yes">
+                <option value="No">
+            </datalist>
+            <!-- <br>
+            <input type="radio" id="practical" name="practical" value="Yes">
+            <label for="practical">Yes</label>
+            <input type="radio" id="practical" name="practical" value="No">
+            <label for="practical">No</label> -->
+        </div>
+
+        <div class="form-group">
+            <label for="question">Do you like working with computers or electric gadgets?</label>
+            <input class="form-control" list="computer" id="computer" placeholder="Answer">
+            <datalist id="computer">
+                <option value="Yes">
+                <option value="No">
+            </datalist>
+            <!-- <br> -->
+            <!-- <input type="radio" id="computer" name="computer" value="Yes">
+            <label for="computer">Yes</label>
+            <input type="radio" id="computer" name="computer" value="No">
+            <label for="computer">No</label> -->
+        </div>
+
+        <div class="form-group">
+            <label for="create">Are you interested in creating or/and designing things?</label>
+            <input class="form-control" list="create" id="create" placeholder="Answer">
+            <datalist id="create">
+                <option value="Yes">
+                <option value="No">
+            </datalist>
+            <!-- <br>
+            <input type="radio" id="create" name="create" value="Yes">
+            <label for="create">Yes</label>
+            <input type="radio" id="create" name="create" value="No">
+            <label for="create">No</label> -->
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="recommedcourse()">Submit</button>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script>
+
+            async function recommedcourse() {
+
+
+                const favorite = document.getElementById("favorite").value;
+                const hobbies = document.getElementById("hobbies").value;
+                const practical = document.getElementById("practical").value;
+                const computer = document.getElementById("computer").value;
+                const create = document.getElementById("create").value;
+                console.log(practical);
+                console.log(computer);
+                console.log(create);
+                if (favorite == "Computer" && hobbies == "Online Games" && practical == "Yes" && computer == "Yes" && create == "No") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=655764f7e415f6e567f0375c";
+                }
+
+                if (favorite == "Computer" && hobbies == "Online Games" && practical == "Yes" && computer == "Yes" && create == "Yes") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=65606475bce86587fccabb4d";
+                }
+
+                if (favorite == "Environmental science" && hobbies == "Online Games" && practical == "No" && computer == "No" && create == "No") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=655833c01f14752ce261b8de";
+                }
+
+                if (favorite == "Science" && hobbies == "Craftsmanship" && practical == "Yes" && computer == "No" && create == "Yes") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=65614747bfc69b52320427ca";
+                }
+
+                if (favorite == "Environmental science" && hobbies == "Embroidery" && practical == "No" && computer == "Yes" && create == "No") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=655f99b56895880c350c07e4";
+                }
+
+                if (favorite == "Computer" && hobbies == "Craftsmanship" && practical == "No" && computer == "Yes" && create == "Yes") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=656149dbbfc69b52320427cb";
+                }
+
+                if (favorite == "Science" && hobbies == "Online Games" && practical == "No" && computer == "No" && create == "Yes") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=65606df5bce86587fccabb4e";
+                }
+
+                if (favorite == "Environmental science" && hobbies == "Craftsmanship" && practical == "Yes" && computer == "No" && create == "No") {
+                    window.location.href = "http://localhost:5500/Frontend/Coursedetail.html?id=655f9f7b6895880c350c07e5";
+                }
+
+                if (!favorite || !hobbies || !practical || !computer || !create) {
+                    alert("Please fill all the fields");
+                }
+                else
+                    alert("No suitable course found");
+
+
+
+
+            };
+        </script>
+    </div>
+</body>
+
+</html>

@@ -4,12 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HomePage</title>
     <link rel="stylesheet" href="./css/homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<head>
+    <!-- Other head elements -->
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -28,14 +41,35 @@
 
         <nav style="margin-top: 18px;font-size: 20px;">
             <ul>
+                <li><a href="../Frontend/homepage.html">Home</a></li>
                 <li><a href="../Frontend/about.html">About</a></li>
                 <li><a href="Carrerpath.html">Career Paths</a></li>
                 <li><a href="../Frontend/public/UserManualForOnlineFormFeeling.pdf" target="_blank">Admission
-                        Process</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                        Process</a>
+
+
+
+                </li>
+                <li><a href="../Frontend/public/FEE STRUCTURE PDF.pdf">Info about fees</a></li>
                 <li><a href="../Frontend/public/ITIList.pdf" target="_blank">ITI LIST </a></li>
                 <li><a href="../Frontend/Userdetail.html" target="_blank"> <i class="fas fa-user"></i> User Profile </a>
                 </li>
+                <li>
+                    <a href="#" class="drawer-toggle">Certifications</a>
+                    <ul class="drawer">
+                        <li style="margin-bottom: 3%;"><a href="../Frontend/public/DOC-20231125-WA0029_.pdf"
+                                target="_blank">SEBC Certificate</a></li>
+                        <li style="margin-bottom: 3%;"><a href="../Frontend/public/WhatsApp Image 2023-11-25 at 16.36.14.jpeg"
+                                target="_blank">NCL Certificate</a></li>
+                        <li style="margin-bottom: 3%;"><a href="../Frontend/public/Format-of-PWD-Certificate.pdf"
+                                target="_blank">PWD Certificate</a></li>
+                        <li style="margin-bottom: 3%;"><a href="../Frontend/public/income.pdf"
+                                target="_blank">Income Certificate</a></li>
+                    </ul>
+                </li>
+                <!-- <li><a href="../Frontend/public/ITIList.pdf" target="_blank">Certifications
+                    </a></li> -->
+
 
 
 
@@ -97,6 +131,17 @@
     </section>
 
 
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Don't know what to choose ?</h2>
+            <p class="text-center mb-4">Not sure which field is the best fit for you? Take our quiz to find out! Based
+                on
+                your preferences and interests, we'll generate the best ITI for you.</p>
+            <div class="text-center">
+                <a href="Questions.html" class="btn btn-primary btn-lg">Click to find your best career</a>
+            </div>
+        </div>
+    </section>
 
 
     <footer class="bg-black text-white py-5">
@@ -129,7 +174,14 @@
             // class "loader hidden"
         });
 
+        var toggles = document.getElementsByClassName("drawer-toggle");
+        var i;
 
+        for (i = 0; i < toggles.length; i++) {
+            toggles[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+            });
+        }
 
 
 
